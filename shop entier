@@ -1,0 +1,329 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+struct Shop{
+
+	char name[20];
+	int id;
+	int price;
+	int category;
+};
+struct Inventory{
+
+	char name[20];
+	int amount;
+};
+
+typedef struct Inventory inventory;
+
+void Inventory(){
+	
+    //Ce qu'il y a dans l'inventaire
+	inventory Sword = {"Sword",0};
+	inventory Spear = {"Spear",0};
+	inventory Shield = {"Shield",0};
+	inventory Helmet = {"Helmet",0};
+	inventory Water = {"Bottle of Water",0};
+	inventory Food = {"Apple",0};
+	inventory Arrow = {"Arrow",0};
+	inventory ChestPlate = {"Chest Plate",0};
+
+
+	//Sword :
+		printf("Name : %s\n", Sword.name);
+		printf("Amount : %d\n", Sword.amount);
+	
+	//Spear :
+		printf("Name : %s\n", Spear.name);
+		printf("Amount : %d\n", Spear.amount);
+	
+	//Shield :
+		printf("Name : %s\n", Shield.name);
+		printf("Amount : %d\n", Shield.amount);
+	
+	//Helmet :
+		printf("Name : %s\n", Helmet.name);
+		printf("Amount : %d\n", Helmet.amount);
+	
+	//Water :
+		printf("Name : %s\n", Water.name);
+		printf("Amount : %d\n", Water.amount);
+	
+	//Food :
+		printf("Name : %s\n", Food.name);
+		printf("Amount : %d\n", Food.amount);
+	
+	//Arrow :
+		printf("Name : %s\n", Arrow.name);
+		printf("Amount : %d\n", Arrow.amount);
+
+	//ChestPlate :
+		printf("Name : %s\n", ChestPlate.name);
+		printf("Amount : %d\n", ChestPlate.amount);
+}
+
+typedef struct Shop shop;
+
+	void stock(){
+		
+		shop Sword = {"Sword",1, 20, 1};
+		shop Shield = {"Shield",2, 40, 2};
+		shop Helmet = {"Helmet",3, 40, 2};
+		shop Spear = {"Spear",4, 12, 1};
+		shop Arrow = {"Arrow",5, 5, 1};
+		shop ChestPlate = {"ChestPlate",6, 35, 2};
+		shop Food = {"Food",7, 5, 3};
+		shop Water = {"Water",8, 5, 3};
+		shop New = {"New", 9, 20, 3};
+		
+
+		//Sword :
+			printf("Name : %s\n", Sword.name);
+			printf("ID : %d\n", Sword.id);
+			printf("Price : %d\n", Sword.price);
+			printf("Category : %d\n\n", Sword.category);
+			
+		//Shield :
+			printf("Name : %s\n", Shield.name);
+			printf("ID : %d\n", Shield.id);
+			printf("Price : %d\n", Shield.price);
+			printf("Category : %d\n\n", Shield.category);
+		
+		//Helmet :
+			printf("Name : %s\n", Helmet.name);
+			printf("ID : %d\n", Helmet.id);
+			printf("Price : %d\n", Helmet.price);
+			printf("Category : %d\n\n", Helmet.category);
+			
+		//Spear :
+			printf("Name : %s\n", Spear.name);
+			printf("ID : %d\n", Spear.id);
+			printf("Price : %d\n", Spear.price);
+			printf("Category : %d\n\n", Spear.category);
+
+		//Arrow :
+			printf("Name : %s\n", Arrow.name);
+			printf("ID : %d\n", Arrow.id);
+			printf("Price : %d\n", Arrow.price);
+			printf("Category : %d\n\n", Arrow.category);
+
+		//ChestPlate :
+			printf("Name : %s\n", ChestPlate.name);
+			printf("ID : %d\n", ChestPlate.id);
+			printf("Price : %d\n", ChestPlate.price);
+			printf("Category : %d\n\n", ChestPlate.category);
+				
+		//Food :
+			printf("Name : %s\n", Food.name);
+			printf("ID : %d\n", Food.id);
+			printf("Price : %d\n", Food.price);
+			printf("Category : %d\n\n", Food.category);
+		
+		//Water :
+			printf("Name : %s\n", Water.name);
+			printf("ID : %d\n", Water.id);
+			printf("Price : %d\n", Water.price);
+			printf("Category : %d\n\n", Water.category);
+			
+		//New :
+			printf("Name : %s\n", New.name);
+			printf("ID : %d\n", New.id);
+			printf("Price : %d\n", New.price);
+			printf("Category : %d\n\n", New.category);
+			
+}
+void degats (shop * buy) {
+	(*buy).price = (*buy).price;
+
+
+
+
+int cstring_cmp(const void *a, const void *b) 
+{ 
+    const char **ia = (const char **)a;
+    const char **ib = (const char **)b;
+    return strcmp(*ia, *ib);
+} 
+
+
+/* fonction print tableau */ 
+void print_cstring_array(char **array, size_t len) 
+{ 
+    size_t i;
+ 
+    for(i=0; i<len; i++) 
+        printf("%s | ", array[i]);
+ 
+    putchar('\n');
+}
+
+
+void sort_cstrings() 
+{ 
+    
+    
+    char *strings[] = { "Sword 20 GP", "Shield 40 GP", "Helmet 40 GP", "Spear 12 GP", "Arrow 5 GP", "Chest Plate 35 GP", "Apple 5 GP", "Bottle of Water 5 GP" };
+    size_t strings_len = sizeof(strings) / sizeof(char *);
+ 
+    /** STRING */ 
+    puts("*** String sorting...");
+ 
+    /* range grâce à qsort */ 
+    qsort(strings, strings_len, sizeof(char *), cstring_cmp);
+ 
+    /* print rangé */ 
+    print_cstring_array(strings, strings_len);
+    
+}
+
+
+}
+int main() {
+    int choice = 0;
+	int choixJoueur = 0;
+	int choix = 0;
+	char answer;
+	int gold = 10000;
+	inventory Sword = {"Sword",0};
+	inventory Spear = {"Spear",0};
+	inventory Shield = {"Shield",0};
+	inventory Helmet = {"Helmet",0};
+	inventory Water = {"Bottle of Water",0};
+	inventory Food = {"Apple",0};
+	inventory Arrow = {"Arrow",0};
+	inventory ChestPlate = {"Chest Plate",0};
+	printf("WELCOME, Welcome to the Smelly Fox.\nThis is my humble shop.\n");
+    printf("So what would you like ? Sell me a new object ? [1]\nBuy one ? [2]\n");
+    scanf("%d", &choix);
+    
+    /*if (choix == 1){
+        printf("So what would you like to sell ?\n");
+        scanf("%s", new.name[]);
+        printf("So what's the price ?\n");
+        scanf("%d", new.price);
+        printf("So what's the category ?\n");
+        scanf("%d", new.category);
+            
+    }*/
+        
+    if (choix == 2){
+    	while(gold>0){
+    			printf("Objects in the Shop :\n\n");
+    			stock();
+    			printf("Inventory : enter 9\n\n");
+    			printf("ID of the item you want to buy :\n");
+    			scanf("%d", &choixJoueur);
+    
+    		if (gold <= 0){
+    			printf("No more Gold\n");
+    		}
+    
+    		switch(choixJoueur){
+    
+    				case 1 :
+    				    printf("\nDo you want to buy a Sword ?\n[1] OR [0]\n");
+    					while(scanf("%d", &choice) == 1 && choice == 1){
+    					    printf("Success!\n");
+    					    printf("Gold - 20\n");
+    					    gold -= 20;
+    						printf("Your Gold : %d$\n",gold);
+                            Sword.amount ++;
+    					}
+    					
+    				break;
+    
+    				case 2 :
+    				    printf("\nDo you want to buy a Shield ?\n[1] OR [0]\n");
+    					while(scanf("%d", &choice) == 1 && choice == 1){
+    					    printf("Success!\n");
+    					    printf("Gold - 40\n");
+    					    gold -= 40;
+    						printf("Your Gold : %d$\n",gold);
+                            Shield.amount ++;
+    					}
+    					
+    				break;
+    
+    				case 3 :
+    				    printf("\nDo you want to buy a Helmet ?\n[1] OR [0]\n");
+    					while(scanf("%d", &choice) == 1 && choice == 1){
+    					    printf("Success!\n");
+    					    printf("Gold - 40\n");
+    					    gold -= 40;
+    						printf("Your Gold : %d$\n",gold);
+                            Helmet.amount ++;
+    					}
+    					
+    				break;
+    
+    			    case 4 :
+    				    printf("\nDo you want to buy a Spear ?\n[1] OR [0]\n");
+    					while(scanf("%d", &choice) == 1 && choice == 1){
+    						printf("Success!\n");
+    						printf("Gold - 12\n");
+    						gold -= 12;
+    						printf("Your Gold : %d$\n",gold);
+                            Spear.amount ++;
+    					}
+    					
+    				break;
+    
+    				case 5 :
+    			    	printf("\nDo you want to buy a Arrow ?\n[1] OR [0]\n");
+    			    	while(scanf("%d", &choice) == 1 && choice == 1){
+    				    	printf("Success!\n");
+    				    	printf("Gold - 5\n");
+    				    	gold -= 5;
+    				    	printf("Your Gold : %d$\n",gold);
+                            Arrow.amount ++;
+    				    }
+    				    
+    				break;
+    
+    				case 6 :
+    			    	printf("\nDo you want to buy a Chest Plate ?\n[1] OR [0]\n");
+    			    	while(scanf("%d", &choice) == 1 && choice == 1){
+    				    	printf("Success!\n");
+    				    	printf("Gold - 35\n");
+    				    	gold -= 35;
+    				    	printf("Your Gold : %d$\n",gold);
+                            ChestPlate.amount ++;
+    				    }
+    				    
+    				break;
+    
+    				case 7 :
+    			        printf("\nDo you want to buy some Food ?\n[1] OR [0]\n");
+    			    	while(scanf("%d", &choice) == 1 && choice == 1){
+    				    	printf("Success!\n");
+    				    	printf("Gold - 5\n");
+    				        gold -= 5; 
+    				    	printf("Your Gold : %d$\n",gold);
+                            Food.amount ++;
+    				    }
+    				    
+    				break;
+    				
+    				case 8 :
+    					printf("\nDo you want to buy a Water ?\n[1] OR [0]\n");
+    					while(scanf("%d", &choice) == 1 && choice == 1){
+    						printf("Success!\n");
+    				    	printf("Gold - 5\n");
+    				    	gold -= 5;
+    				    	printf("Your Gold : %d$\n",gold);
+                            Water.amount ++;
+    				    }
+    				    
+    				break;
+    					
+    				case 9 :
+    					printf("\nInventory :\n");
+    					Inventory();
+    			    break;
+    		};
+    	};
+    };
+}
+
