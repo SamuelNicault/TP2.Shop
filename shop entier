@@ -18,50 +18,9 @@ struct Inventory{
 
 typedef struct Inventory inventory;
 
-void Inventory(){
-	
-    //Ce qu'il y a dans l'inventaire
-	inventory Sword = {"Sword",0};
-	inventory Spear = {"Spear",0};
-	inventory Shield = {"Shield",0};
-	inventory Helmet = {"Helmet",0};
-	inventory Water = {"Bottle of Water",0};
-	inventory Food = {"Apple",0};
-	inventory Arrow = {"Arrow",0};
-	inventory ChestPlate = {"Chest Plate",0};
-
-
-	//Sword :
-		printf("Name : %s\n", Sword.name);
-		printf("Amount : %d\n", Sword.amount);
-	
-	//Spear :
-		printf("Name : %s\n", Spear.name);
-		printf("Amount : %d\n", Spear.amount);
-	
-	//Shield :
-		printf("Name : %s\n", Shield.name);
-		printf("Amount : %d\n", Shield.amount);
-	
-	//Helmet :
-		printf("Name : %s\n", Helmet.name);
-		printf("Amount : %d\n", Helmet.amount);
-	
-	//Water :
-		printf("Name : %s\n", Water.name);
-		printf("Amount : %d\n", Water.amount);
-	
-	//Food :
-		printf("Name : %s\n", Food.name);
-		printf("Amount : %d\n", Food.amount);
-	
-	//Arrow :
-		printf("Name : %s\n", Arrow.name);
-		printf("Amount : %d\n", Arrow.amount);
-
-	//ChestPlate :
-		printf("Name : %s\n", ChestPlate.name);
-		printf("Amount : %d\n", ChestPlate.amount);
+void Inventory(inventory * varInventaire){
+		printf("Name : %s\n", (*varInventaire).name);
+		printf("Amount : %d\n", (*varInventaire).amount);
 }
 
 typedef struct Shop shop;
@@ -181,6 +140,7 @@ void sort_cstrings()
 
 }
 int main() {
+    int test = 0;
     int choice = 0;
 	int choixJoueur = 0;
 	int choix = 0;
@@ -320,10 +280,16 @@ int main() {
     					
     				case 9 :
     					printf("\nInventory :\n");
-    					Inventory();
+    					Inventory(&Sword);
+    					Inventory(&Shield);
+    					Inventory(&Spear);
+    					Inventory(&Arrow);
+    					Inventory(&ChestPlate);
+    					Inventory(&Food);
+    					Inventory(&Water);
+    					scanf("%d", &test);
     			    break;
     		};
     	};
     };
 }
-
